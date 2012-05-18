@@ -1,2 +1,2 @@
 require "omniauth-quizlet/version"
-require "omniauth-quizlet/strategies/quizlet"
+require "omniauth/strategies/quizlet"
