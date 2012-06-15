@@ -1,24 +1,32 @@
-# Omniauth::Quizlet
+# Omniauth Quizlet Strategy
 
-TODO: Write a gem description
+This gem provides a simple way to authenticate to Quizlet using Omniauth.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-quizlet'
+```ruby
+gem 'omniauth-quizlet'
+```
 
-And then execute:
+## Basic usage
 
-    $ bundle
+First, you will need to [register](https://quizlet.com/api/2.0/docs/) with Quizlet and obtain an Client ID and Secret Key. Once you do that, you can use it like so:
 
-Or install it yourself as:
+```ruby
+use OmniAuth::Builder do
+  provider :quizlet, 'client_id', 'secret_key', :scope => "read write_set write_group", :state => "RANDOM_STRING"
+end
+```
 
-    $ gem install omniauth-quizlet
+## Scopes
 
-## Usage
+Scopes represent a limited set of permissions you can request from a user. More info on [scopes](https://quizlet.com/api/2.0/docs/scopes/)
 
-TODO: Write usage instructions here
+## Additional information
+
+For additional information, refer to the [OmniAuth wiki](https://github.com/intridea/omniauth/wiki) and [Quizlet API 2.0](https://quizlet.com/api/2.0/docs/).
 
 ## Contributing
 
@@ -27,3 +35,6 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Licence
+MIT License. Copyright 2012 Zigotto®. http://www.zigotto.com
