@@ -3,8 +3,10 @@ require 'spec_helper'
 describe OmniAuth::Strategies::Quizlet do
 
   subject do
-    OmniAuth::Strategies::Quizlet.new({})
+    OmniAuth::Strategies::Quizlet.new(nil, @options || {})
   end
+
+  it_should_behave_like 'an oauth2 strategy'
 
   context "client options" do
     it "should have correct site" do
